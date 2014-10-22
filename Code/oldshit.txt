@@ -1,0 +1,47 @@
+This resource is a port of AES-LUA that can be found at GitHub (https://github.com/bighil/aeslua) and a demonstration of the new bitwise operators (introduced in 1.3.2).
+I also added a base64 library, so that you are able to convert the encrypted binary string to a representable ASCII string.
+
+Documentation:
+string exports.aes:encryptString(string password, string data, [string keyLength, string mode])
+Returns the encrypted binary string.
+Parameters:
+- password: The password that should be used for the encryption
+- data: The raw data
+- keyLength: The key length. Possible values: "AES128" (default), "AES192", "AES256"
+- mode: The encryption mode. Possible values "ECBMODE", "CBCMODE" (default), "OFBMODE", "CFBMODE"
+
+string exports.aes:decryptString(string password, string encryptedData, [string keyLength, string mode])
+Returns the encrypted binary string.
+Parameters:
+- password: The password that should be used for the encryption
+- encryptedData: The encrypted binary string
+- keyLength: The key length. Possible values: "AES128" (default), "AES192", "AES256"
+- mode: The encryption mode. Possible values "ECBMODE", "CBCMODE" (default), "OFBMODE", "CFBMODE"
+
+bool exports.aes:encryptFile(string password, string sourceFile, string targetFile, [string keyLength, string mode])
+Encrypts the specified file.
+Parameters:
+- password: The password that should be used for the encryption
+- sourceFile: The source file (raw)
+- targetFile: The target file (encrypted)
+- keyLength: The key length. Possible values: "AES128" (default), "AES192", "AES256"
+- mode: The encryption mode. Possible values "ECBMODE", "CBCMODE" (default), "OFBMODE", "CFBMODE"
+
+bool exports.aes:decryptFile(string password, string sourceFile, string targetFile, [string keyLength, string mode])
+Decrypts the specified file.
+Parameters:
+- password: The password that should be used for the encryption
+- sourceFile: The source file (encrypted)
+- targetFile: The target file (raw)
+- keyLength: The key length. Possible values: "AES128" (default), "AES192", "AES256"
+- mode: The encryption mode. Possible values "ECBMODE", "CBCMODE" (default), "OFBMODE", "CFBMODE"
+
+string exports.aes:to_base64(string data)
+Converts the specified binary data to an ASCII string by base64 and returns it.
+Parameters:
+- data: The binary string
+
+string exports.aes:from_base64(string data)
+to_base64 vice versa.
+Parameters:
+- data: The base64ed string

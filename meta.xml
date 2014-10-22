@@ -1,0 +1,12 @@
+<meta>
+	<script src="Code/GUI.lua" type="client" />
+	<script src="Code/aeslua.lua" type="client" />
+	<script src="Code/aes/buffer.lua" type="client" />
+	<script src="Code/aes/gf.lua" type="client" />
+	<script src="Code/aes/util.lua" type="client" />
+	<script src="Code/aes/aes.lua" type="client" />
+	<script src="Code/aes/ciphermode.lua" type="client" />
+	<script src="Code/AES.lua" type="client" />
+	<export function="encryptString" type="client" />
+	<export function="decryptString" type="client" />
+</meta>
